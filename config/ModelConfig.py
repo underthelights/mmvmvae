@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import Optional
+from omegaconf import MISSING
 
 
 @dataclass
@@ -9,6 +11,7 @@ class ModelConfig:
     lr: float = 5e-4
     epochs: int = 500
 
+    name: str = MISSING
     latent_dim: int = 256
 
     # loss hyperparameters
@@ -26,6 +29,7 @@ class JointModelConfig(ModelConfig):
 
 @dataclass
 class MixedPriorModelConfig(ModelConfig):
+    temp_annealing: Optional[str] = "cosine"  # Default to "cosine"
     name: str = "mixedprior"
     # weight on N(0,1) in mixed prior
     alpha_annealing: bool = True

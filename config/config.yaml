@@ -6,5 +6,11 @@ defaults:
   - dataset: PMtranslated75
 
 dataset:
-  dir_data_base: "PUT YOUR DATA DIR HERE"
-  dir_clfs_base: "PUT YOUR CLF DIR HERE"
+  dir_data_base: "data/data"
+  dir_clfs_base: "data/trained_classifiers"
+
+model:
+  temp_annealing: "cosine"  
+
+log:
+  wandb_offline: True

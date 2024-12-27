@@ -14,9 +14,13 @@ class DataConfig:
 @dataclass
 class PolyMNISTDataConfig(DataConfig):
     num_views: int = 3
-    dir_data_base: str = "/usr/scratch/projects/multimodality/data"
+    # dir_data_base: str = "/usr/scratch/projects/multimodality/data"
+    # dir_clfs_base: str = (
+    #     "/usr/scratch/projects/multimodality/mvvae/experiments/trained_clfs/PolyMNIST"
+    # )
+    dir_data_base: str = "data/data"
     dir_clfs_base: str = (
-        "/usr/scratch/projects/multimodality/mvvae/experiments/trained_clfs/PolyMNIST"
+        "data/trained_classifiers"
     )
     n_clfs_outputs: int = 10
     num_labels: int = 1
@@ -25,21 +29,28 @@ class PolyMNISTDataConfig(DataConfig):
 @dataclass
 class PMtranslatedData75Config(PolyMNISTDataConfig):
     name: str = "PM_translated75"
-    suffix_data_train: str = "PolyMNIST_translated_scale075/train"
-    suffix_data_test: str = "PolyMNIST_translated_scale075/test"
-    suffix_clfs: str = "translated75_resnet"
+    dir_data_base: str = "data/data"
+    suffix_data_train: str = "data/data/MMNIST/train"
+    suffix_data_test: str = "data/data/MMNIST/test"
+    suffix_clfs: str = "data/trained_classifiers/trained_clfs_polyMNIST"
 
 
 @dataclass
 class CelebADataConfig(DataConfig):
     name: str = "celeba"
     num_views: int = 2
-    dir_data: str = "/usr/scratch/projects/multimodality/data/CelebA"
+    dir_data: str = "data/data/CelebA"
+    dir_data_base: str = "data/data/celeba"
     dir_alphabet: str = (
-        "/home/thomas/polybox2/PhD/projects/research_stay/code/mvvae/utils"
+        ""
     )
-    dir_clf: str = (
-        "/usr/scratch/projects/multimodality/mvvae/experiments/trained_clfs/CelebA"
+    dir_clfs_base: str = (
+        # "/home/skyuhwn/workspace/mmvmvae/data/trained_classifiers/trained_clfs_celeba"
+        "data/trained_classifiers/trained_clfs_celeba"
+    )
+    dir_clfs: str = (
+        # "/home/skyuhwn/workspace/mmvmvae/data/trained_classifiers/trained_clfs_celeba"
+        "data/trained_classifiers/trained_clfs_celeba"
     )
 
     len_sequence: int = 256

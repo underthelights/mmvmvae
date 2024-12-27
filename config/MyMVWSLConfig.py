@@ -18,7 +18,7 @@ class LogConfig:
     wandb_local_instance: bool = False
 
     # logs
-    dir_logs: str = "/usr/scratch/projects/multimodality/mvvae/experiments"
+    dir_logs: str = "experiments"
 
     # logging frequencies
     downstream_logging_frequency: int = 50
@@ -42,7 +42,8 @@ class EvalConfig:
 
     # fid
     path_inception_weights: str = (
-        "/usr/scratch/projects/multimodality/inception_v3/pt_inception-2015-12-05-6726825d.pth"
+        # "/usr/scratch/projects/multimodality/inception_v3/pt_inception-2015-12-05-6726825d.pth"
+        "data/trained_classifiers/pt_inception-2015-12-05-6726825d.pth"
     )
 
 

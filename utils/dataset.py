@@ -21,6 +21,8 @@ def get_dataset(cfg):
     else:
         print("dataset unknown...exit")
         sys.exit()
+    print("\n\n\n\nDataset length:", len(ds))
+
     return ds
 
 

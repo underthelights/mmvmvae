@@ -95,4 +95,4 @@ dependencies:
       - urllib3==2.2.0
       - wandb==0.16.2
       - yarl==1.9.4
-prefix: /usr/scratch/miniconda3/envs/mvvae
+prefix: /home/skyuhwn/anaconda3/envs/mvvae
